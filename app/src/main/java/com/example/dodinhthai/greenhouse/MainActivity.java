@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(List<Frame> items) {  //This method run in forceground
+        protected void onPostExecute(List<Frame> items) {  //This method run in foreground
             mItems = items; //Return a List<Frame> mItems
             updateUI();
         }

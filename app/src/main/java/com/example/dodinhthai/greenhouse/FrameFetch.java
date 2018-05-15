@@ -49,7 +49,7 @@ public class FrameFetch {
             String url = Uri.parse("http://192.168.0.103:8080/GHServer/manager/frame/1?row=5").buildUpon().build().toString();
             String jsonString = getUrlString(url);
             Log.i(TAG, "Received JSON: " + jsonString);
-            JSONObject jsonBody = new JSONObject(jsonString); // Tao JSON Body
+            JSONObject jsonBody = new JSONObject(jsonString); //Create JSON Body
             parseItems(items, jsonBody);
         } catch (JSONException je) {
             Log.e(TAG, "Failed to parse JSON", je);

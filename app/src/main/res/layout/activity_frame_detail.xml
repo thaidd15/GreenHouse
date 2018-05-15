@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40px"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:background="@drawable/collect_border"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="Environment conditions"
+                android:textColor="@android:color/white"
+                android:textSize="15pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="match_parent"
+                android:layout_height="400px"
+                android:layout_weight="1"
+                android:background="@drawable/collect_border"
+                android:drawableLeft="@drawable/temperature"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="match_parent"
+                android:layout_height="400px"
+                android:layout_weight="1"
+                android:background="@drawable/collect_border"
+                android:drawableLeft="@drawable/humidity"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+
+            <TextView
+                android:id="@+id/ph"
+                android:layout_width="match_parent"
+                android:layout_height="400px"
+                android:layout_weight="1"
+                android:background="@drawable/collect_border"
+                android:drawableLeft="@drawable/ph"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40px"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/collect_border"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="Control"
+                android:textColor="@android:color/white"
+                android:textSize="15pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/led_switch"
+                android:background="#BEBEBE"
+                android:drawableLeft="@drawable/light"
+                android:drawablePadding="70px"
+                android:padding="30px"
+                android:text="@string/led"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/fan_switch"
+                android:background="#696969"
+                android:drawableLeft="@drawable/fan"
+                android:drawablePadding="70px"
+                android:padding="30px"
+                android:text="@string/fan"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/pump_a_switch"
+                android:background="#BEBEBE"
+                android:drawableLeft="@drawable/pump"
+                android:drawablePadding="70px"
+                android:padding="30px"
+                android:text="@string/pump_a"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/pump_b_switch"
+                android:background="#696969"
+                android:drawableLeft="@drawable/pump"
+                android:drawablePadding="70px"
+                android:padding="30px"
+                android:text="@string/pump_b"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/pump_up_switch"
+                android:background="#BEBEBE"
+                android:drawableLeft="@drawable/pump"
+                android:drawablePadding="70px"
+                android:padding="30px"
+                android:text="@string/pump_up"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/pump_down_switch"
+                android:background="#696969"
+                android:drawableLeft="@drawable/pump"
+                android:drawablePadding="70px"
+                android:padding="30px"
+                android:text="@string/pump_down"
+                android:textColor="@android:color/white"
+                android:textSize="10pt" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

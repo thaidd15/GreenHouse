@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GreenHouse</string>
+    <string name="frame_2_id">Frame 2</string>
+    <string name="frame_2_title">Salad</string>
+    <string name="frame_2_created_at">Created at: 05/04/2018 08:15:00</string>
+    <string name="frame_2_days">Days: 40</string>
+    <string name="frame_2_status">Status: Disconnected</string>
+    <string name="led">LED</string>
+    <string name="fan">FAN</string>
+    <string name="pump_a">PUMP A LIQUID</string>
+    <string name="pump_b">PUMP B LIQUID</string>
+    <string name="pump_up">PUMP PH UP</string>
+    <string name="pump_down">PUMP PH DOWN</string>
+</resources>

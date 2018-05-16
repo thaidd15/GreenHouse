@@ -24,7 +24,7 @@
                 android:background="@drawable/collect_border"
                 android:gravity="center"
                 android:padding="20px"
-                android:text="Environment conditions"
+                android:text="@string/environment_conditions"
                 android:textColor="@android:color/white"
                 android:textSize="15pt" />
         </TableRow>
@@ -86,7 +86,7 @@
                 android:background="@drawable/collect_border"
                 android:gravity="center"
                 android:padding="20px"
-                android:text="Control"
+                android:text="@string/control_devices"
                 android:textColor="@android:color/white"
                 android:textSize="15pt" />
         </TableRow>

@@ -11,4 +11,6 @@
     <string name="pump_b">PUMP B LIQUID</string>
     <string name="pump_up">PUMP PH UP</string>
     <string name="pump_down">PUMP PH DOWN</string>
+    <string name="environment_conditions">Environment Conditions</string>
+    <string name="control_devices">Control Devices</string>
 </resources>

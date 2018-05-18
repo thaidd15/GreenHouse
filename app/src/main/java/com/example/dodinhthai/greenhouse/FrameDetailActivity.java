@@ -16,22 +16,24 @@ public class FrameDetailActivity extends AppCompatActivity {
     private List<Environment> mItems = new ArrayList<>();
     private TextView temperature, humidity, ph;
     private Switch led_switch, fan_switch, pumpa_switch, pumpb_switch, pumppu_switch, pumppd_switch;
-    private String urls = "http://192.168.0.103:8080/GHServer/manager/frame/1/control/";
+    private String urls_device = "http://192.168.43.170:8080/GHServer/manager/frame/1/control/";
+    private String urls_auto_mode = "http://192.168.43.170:8080/GHServer/manager/frame/1/control/mode?mode=off";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frame_detail);
-        new collectTask().execute();
+        new collectTask().execute(); //Collect data
+        new controlTask().execute(urls_auto_mode);  //Turn off auto mode
         led_switch = (Switch) findViewById(R.id.led_switch);
         led_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
-                    new controlTask().execute(urls + "led?led=on");
+                    new controlTask().execute(urls_device + "led?led=on");
                     Toast.makeText(FrameDetailActivity.this, "LED ON", Toast.LENGTH_SHORT).show();
                 } else {
-                    new controlTask().execute(urls + "led?led=off");
+                    new controlTask().execute(urls_device + "led?led=off");
                     Toast.makeText(FrameDetailActivity.this, "LED OFF", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -41,10 +43,10 @@ public class FrameDetailActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
-                    new controlTask().execute(urls + "fan?fan=on");
+                    new controlTask().execute(urls_device + "fan?fan=on");
                     Toast.makeText(FrameDetailActivity.this, "FAN ON", Toast.LENGTH_SHORT).show();
                 } else {
-                    new controlTask().execute(urls + "fan?fan=off");
+                    new controlTask().execute(urls_device + "fan?fan=off");
                     Toast.makeText(FrameDetailActivity.this, "FAN OFF", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -54,10 +56,10 @@ public class FrameDetailActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
-                    new controlTask().execute(urls + "pumpa?pumpa=on");
+                    new controlTask().execute(urls_device + "pumpa?pumpa=on");
                     Toast.makeText(FrameDetailActivity.this, "PUMP A LIQUID ON", Toast.LENGTH_SHORT).show();
                 } else {
-                    new controlTask().execute(urls + "pumpa?pumpa=off");
+                    new controlTask().execute(urls_device + "pumpa?pumpa=off");
                     Toast.makeText(FrameDetailActivity.this, "PUMP A LIQUID OFF", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -67,10 +69,10 @@ public class FrameDetailActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
-                    new controlTask().execute(urls + "pumpb?pumpb=on");
+                    new controlTask().execute(urls_device + "pumpb?pumpb=on");
                     Toast.makeText(FrameDetailActivity.this, "PUMP B LIQUID ON", Toast.LENGTH_SHORT).show();
                 } else {
-                    new controlTask().execute(urls + "pumpb?pumpb=off");
+                    new controlTask().execute(urls_device + "pumpb?pumpb=off");
                     Toast.makeText(FrameDetailActivity.this, "PUMP B LIQUID OFF", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -80,10 +82,10 @@ public class FrameDetailActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
-                    new controlTask().execute(urls + "pumppu?pumppu=on");
+                    new controlTask().execute(urls_device + "pumppu?pumppu=on");
                     Toast.makeText(FrameDetailActivity.this, "PUMP PH UP ON", Toast.LENGTH_SHORT).show();
                 } else {
-                    new controlTask().execute(urls + "pumppu?pumppu=off");
+                    new controlTask().execute(urls_device + "pumppu?pumppu=off");
                     Toast.makeText(FrameDetailActivity.this, "PUMP PH UP OFF", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -93,10 +95,10 @@ public class FrameDetailActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
-                    new controlTask().execute(urls + "pumppd?pumppd=on");
+                    new controlTask().execute(urls_device + "pumppd?pumppd=on");
                     Toast.makeText(FrameDetailActivity.this, "PUMP PH DOWN ON", Toast.LENGTH_SHORT).show();
                 } else {
-                    new controlTask().execute(urls + "pumppd?pumppd=off");
+                    new controlTask().execute(urls_device + "pumppd?pumppd=off");
                     Toast.makeText(FrameDetailActivity.this, "PUMP PH DOWN OFF", Toast.LENGTH_SHORT).show();
                 }
             }

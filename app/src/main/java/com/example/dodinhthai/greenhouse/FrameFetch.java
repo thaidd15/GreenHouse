@@ -46,7 +46,8 @@ public class FrameFetch {
     public List<Frame> fetchItems() {
         List<Frame> items = new ArrayList<>();
         try {
-            String url = Uri.parse("http://192.168.0.103:8080/GHServer/manager/frame/1?row=5").buildUpon().build().toString();
+            //String url = Uri.parse("http://192.168.0.103:8080/GHServer/manager/frame/1?row=5").buildUpon().build().toString();
+            String url = Uri.parse("http://192.168.43.170:8080/GHServer/manager/frame/1?row=5").buildUpon().build().toString();
             String jsonString = getUrlString(url);
             Log.i(TAG, "Received JSON: " + jsonString);
             JSONObject jsonBody = new JSONObject(jsonString); //Create JSON Body

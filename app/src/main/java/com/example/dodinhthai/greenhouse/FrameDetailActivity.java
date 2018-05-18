@@ -16,8 +16,8 @@ public class FrameDetailActivity extends AppCompatActivity {
     private List<Environment> mItems = new ArrayList<>();
     private TextView temperature, humidity, ph;
     private Switch led_switch, fan_switch, pumpa_switch, pumpb_switch, pumppu_switch, pumppd_switch;
-    private String urls_device = "http://192.168.43.170:8080/GHServer/manager/frame/1/control/";
-    private String urls_auto_mode = "http://192.168.43.170:8080/GHServer/manager/frame/1/control/mode?mode=off";
+    private String urls_device = "http://192.168.0.103:8080/GHServer/manager/frame/1/control/";
+    private String urls_auto_mode = "http://192.168.0.103:8080/GHServer/manager/frame/1/control/mode?mode=off";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

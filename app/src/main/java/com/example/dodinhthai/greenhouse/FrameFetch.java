@@ -43,24 +43,23 @@ public class FrameFetch {
         return new String(getUrlBytes(urlSpec));
     }
 
-    public List<Frame> fetchItems() {
-        List<Frame> items = new ArrayList<>();
+    public List<Frame> fetchFrame() {
+        List<Frame> frames = new ArrayList<>();
         try {
-            String url = Uri.parse("http://192.168.0.103:8080/GHServer/manager/frame/1?row=5").buildUpon().build().toString();
-            //String url = Uri.parse("http://192.168.43.170:8080/GHServer/manager/frame/1?row=5").buildUpon().build().toString();
+            String url = Uri.parse("http://192.168.0.103:8080/GHServer/manager/frame/1?row=10").buildUpon().build().toString();
             String jsonString = getUrlString(url);
             Log.i(TAG, "Received JSON: " + jsonString);
             JSONObject jsonBody = new JSONObject(jsonString); //Create JSON Body
-            parseItems(items, jsonBody);
+            parseFrames(frames, jsonBody);
         } catch (JSONException je) {
             Log.e(TAG, "Failed to parse JSON", je);
         } catch (IOException ioe) {
             Log.e(TAG, "Failed to fetch items", ioe);
         }
-        return items;
+        return frames;
     }
 
-    private void parseItems(List<Frame> items, JSONObject jsonBody) throws IOException, JSONException {
+    private void parseFrames(List<Frame> frames, JSONObject jsonBody) throws IOException, JSONException {
         JSONArray lisJsonArray = jsonBody.getJSONArray("lis"); //Get lisJsonArray from jsonBody
         JSONObject frameJsonObject = lisJsonArray.getJSONObject(0); //Get frameJsonObject from lisJsonArray
         Frame fr = new Frame();
@@ -71,6 +70,6 @@ public class FrameFetch {
         fr.setTitle(plantJsonObject.getString("plant_name"));
         JSONObject availableframeJsonObject = frameJsonObject.getJSONObject("available_frame");
         fr.setStatus(availableframeJsonObject.getBoolean("status"));
-        items.add(fr);
+        frames.add(fr);
     }
 }

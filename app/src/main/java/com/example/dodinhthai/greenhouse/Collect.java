@@ -43,30 +43,29 @@ public class Collect {
         return new String(getUrlBytes(urlSpec));
     }
 
-    public List<Environment> fetchItems() {
-        List<Environment> items = new ArrayList<>();
+    public List<Environment> fetchData() {
+        List<Environment> data = new ArrayList<>();
         try {
-            String url = Uri.parse("http://192.168.0.103:8080/GHServer/manager/frame/1/statistic/data/1?row=5").buildUpon().build().toString();
-            //String url = Uri.parse("http://192.168.43.170:8080/GHServer/manager/frame/1/statistic/data/1?row=5").buildUpon().build().toString();
+            String url = Uri.parse("http://192.168.0.103:8080/GHServer/manager/frame/1/statistic/data/1?row=10").buildUpon().build().toString();
             String jsonString = getUrlString(url);
             Log.i(TAG, "Received JSON: " + jsonString);
             JSONObject jsonBody = new JSONObject(jsonString);
-            parseItems(items, jsonBody);
+            parseData(data, jsonBody);
         } catch (JSONException je) {
             Log.e(TAG, "Failed to parse JSON", je);
         } catch (IOException ioe) {
             Log.e(TAG, "Failed to fetch items", ioe);
         }
-        return items;
+        return data;
     }
 
-    private void parseItems(List<Environment> items, JSONObject jsonBody) throws IOException, JSONException {
+    private void parseData(List<Environment> data, JSONObject jsonBody) throws IOException, JSONException {
         JSONArray lisJsonArray = jsonBody.getJSONArray("lis");
         JSONObject collectJsonObject = lisJsonArray.getJSONObject(lisJsonArray.length() - 1);
         Environment ev = new Environment();
         ev.setTemperature(collectJsonObject.getString("tempurature"));
         ev.setHumidity(collectJsonObject.getString("humidity"));
         ev.setPH(collectJsonObject.getString("pH"));
-        items.add(ev);
+        data.add(ev);
     }
 }

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private class FetchFrameTask extends AsyncTask<Void, Void, List<Frame>> {
         @Override
         protected List<Frame> doInBackground(Void... params) { //This method run in background
-            return new FrameFetch().fetchItems(); //Return a List<Frame> which input for method onPostExecute()
+            return new FrameFetch().fetchFrame(); //Return a List<Frame> which input for method onPostExecute()
         }
 
         @Override

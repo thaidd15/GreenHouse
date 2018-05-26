@@ -121,7 +121,7 @@ public class FrameDetailActivity extends AppCompatActivity {
     private class collectTask extends AsyncTask<Void, Void, List<Environment>> {
         @Override
         protected List<Environment> doInBackground(Void... params) {
-            return new Collect().fetchItems();
+            return new Collect().fetchData();
         }
 
         @Override
